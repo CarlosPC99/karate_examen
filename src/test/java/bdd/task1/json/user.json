@@ -1,6 +1,6 @@
 {
-  "phone": "",
-  "fullName": "Carlos Puican test karate 1",
-  "email": "Puican_test@test.com",
+  "phone": "#string",
+  "fullName": "#string",
+  "email": "#string",
   "pin": "123456"
 }
