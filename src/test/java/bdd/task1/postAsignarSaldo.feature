@@ -1,9 +1,7 @@
 Feature: Asignar Saldo y Validar
   Background:
     * url 'http://134.209.211.10:4002'
-    * header x-channel = 'WEB'
 
-    #* def token1 = callonce read('classpath:bdd/task1/getToken.feature')
     * def token1 = call read('classpath:bdd/task1/getToken.feature@Prueba1')
     * def token2 = call read('classpath:bdd/task1/getToken.feature@Prueba2')
 
@@ -15,14 +13,14 @@ Feature: Asignar Saldo y Validar
     And request
     """
       {
-        "amount": 45
+        "amount": 50
       }
     """
     When method post
     Then status 200
     And print response
 
-    #validar que el saldo sea mayor a 45 para hacer la operacion
+    # Validar que el saldo sea mayor a 45 para hacer la operacion
     Given path '/wallet/v1/balance'
     And header Authorization = token1.authorization1
     And header x-channel = 'WEB'
@@ -30,7 +28,8 @@ Feature: Asignar Saldo y Validar
     When method get
     Then status 200
     And print response
-    And print response.balance
+    #And print response.balance
+    * def saldo_user1 = response.balance
     And assert response.balance > 44
 
 
@@ -57,5 +56,6 @@ Feature: Asignar Saldo y Validar
     When method get
     Then status 200
     And print response
-    And print response.balance
+    #And print response.balance
+    * def saldo_user2 = response.balance
     And assert response.balance > 44

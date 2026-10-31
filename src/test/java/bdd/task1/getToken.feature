@@ -1,14 +1,12 @@
 Feature: Loguearse y obtener token
   Background:
     * url 'http://134.209.211.10:4001'
-    * header x-channel = 'WEB'
     * def rqlogin = read ("classpath:/bdd/task1/json/login.json")
-
-    * def registros = callonce read('classpath:bdd/task1/postNewUser.feature')
 
   @Prueba1
   Scenario: Obtener token usuario 1
     * def usuario1 = registros.usuario1
+    * def idUser1 = registros.idRegistrado1
     * def phone1 = registros.phone1Registrado
     * print phone1
 
@@ -28,6 +26,7 @@ Feature: Loguearse y obtener token
   @Prueba2
   Scenario: Obtener token usuario 2
     * def usuario2 = registros.usuario2
+    * def idUser2 = registros.idRegistrado2
     * def phone2 = registros.phone2Registrado
     * print phone2
 
