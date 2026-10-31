@@ -2,7 +2,7 @@ Feature: Loguearse y obtener token
   Background:
     * url 'http://134.209.211.10:4001'
     * def rqlogin = read ("classpath:/bdd/task1/json/login.json")
-
+    * header x-channel = 'WEB'
   @Prueba1
   Scenario: Obtener token usuario 1
     * def usuario1 = registros.usuario1

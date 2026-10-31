@@ -1,7 +1,7 @@
 Feature: Transferir dinero del usuario 1 al usuario 2
   Background:
     * url 'http://134.209.211.10:4003'
-
+    * header x-channel = 'WEB'
     # Registrar usuarios
     * def registros = callonce read('classpath:bdd/task1/postNewUser.feature@RegistroUsuarios')
 

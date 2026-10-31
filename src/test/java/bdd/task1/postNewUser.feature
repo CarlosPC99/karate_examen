@@ -1,7 +1,7 @@
 Feature: Registrar usuarios
   Background:
     * url 'http://134.209.211.10:4001'
-
+    * header x-channel = 'WEB'
     * def rqlogin = read ("classpath:/bdd/task1/json/login.json")
     * def rquser = read ("classpath:/bdd/task1/json/user.json")
     * def responseUser = read ("classpath:/bdd/task1/json/userResponse.json")

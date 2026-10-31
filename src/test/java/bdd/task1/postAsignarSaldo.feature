@@ -1,7 +1,7 @@
 Feature: Asignar Saldo y Validar
   Background:
     * url 'http://134.209.211.10:4002'
-
+    * header x-channel = 'WEB'
     * def token1 = call read('classpath:bdd/task1/getToken.feature@Prueba1')
     * def token2 = call read('classpath:bdd/task1/getToken.feature@Prueba2')
 
