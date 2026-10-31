@@ -1,4 +1,4 @@
-Para ejecutar el proyecto se necesita escribir en la consola maeven el siguiente comando:
+Para ejecutar el proyecto se necesita escribir en la consola maven el siguiente comando:
 
 mvn test "-Dkarate.options=--tags @Prueba5"
 
